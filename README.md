@@ -24,6 +24,7 @@
 * If you enter a voucher ID and decide not to pay but to remove the items from your cart instead, the vouchers can be used again
 
 
+* All products available are stored in the items.js file.
 
 
 * The image used in this project is taken from pixabay.com and is free.
