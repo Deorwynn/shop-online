@@ -1,0 +1,4 @@
+<div ng-controller="itemsTemplateCtrl">
+    <div class="col-lg-6 col-xs-12"><span>{{$ctrl.item}}</span></div>
+    <div class="col-lg-6 col-xs-12"><span>£{{$ctrl.price}}</span><span ng-if="$ctrl.stock > 0">{{$ctrl.stock}} in stock</span><span ng-if="$ctrl.stock == 0">Out of Stock</span><button ng-click="addItemToCart()">BUY</button></div>
+</div>

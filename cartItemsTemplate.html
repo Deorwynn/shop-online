@@ -1,0 +1,4 @@
+<div ng-controller="cartItemsTemplateCtrl">
+    <div class="col-lg-6 col-xs-12"><span>{{$ctrl.item}}</span></div>
+    <div class="col-lg-6 col-xs-12"><span>£{{$ctrl.price * $ctrl.qty}}</span><span>Quantity: {{$ctrl.qty}}</span><button ng-click="removeItemFromCart()">REMOVE</button></div>
+</div>

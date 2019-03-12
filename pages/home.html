@@ -1,0 +1,47 @@
+<div ng-controller="repeatCtrl">
+
+        <div id="jumbotron" class="jumbotron text-center">
+            <h1>Shop Online</h1>
+            <p>{{ message }}</p>
+            <section class="item-menu col-xl-12">
+                <div class="btn-menu-wrapper">
+                    <button class="btn-basic btn-gen">Women</button>
+                    <div class="btn-topic-wrapper">
+                        <button class="btn-basic btn-topic" ng-click="changeTopic(0)">Footwear</button>
+                        <button class="btn-basic btn-topic" ng-click="changeTopic(1)">Casualwear</button>
+                        <button class="btn-basic btn-topic" ng-click="changeTopic(2)">Formalwear</button>
+                    </div>
+                </div>
+                <div class="btn-menu-wrapper">
+                    <button class="btn-basic btn-gen">Men</button>
+                    <div class="btn-topic-wrapper">
+                        <button class="btn-basic btn-topic" ng-click="changeTopic(3)"><span>Footwear</span></button>
+                        <button class="btn-basic btn-topic" ng-click="changeTopic(4)"><span>Casualwear</span></button>
+                        <button class="btn-basic btn-topic" ng-click="changeTopic(5)"><span>Formalwear</span></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+        <div class="row main-content">
+            
+            <div class="col-xl-12 items-box">
+                <div class="container main-content-wrapper">
+    
+                    <div class="nail n1"></div>
+                    <div class="nail n2"></div>
+    
+                    <ul class="repeat">
+                        <li ng-repeat="item in itemsInStore">
+                            <items-template class="list-item" item="{{item}}" price="{{itemsPrices[itemsInStore.indexOf(item)]}}" stock="{{itemsStock[itemsInStore.indexOf(item)]}}"></items-template>
+                        </li>
+                    </ul>
+            
+                    <div class="nail n3"></div>
+                    <div class="nail n4"></div>
+            
+                </div>
+            </div>
+    
+        </div>
+    </div>

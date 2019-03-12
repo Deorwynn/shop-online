@@ -1,0 +1,42 @@
+<div ng-controller="repeatCtrl">
+
+    <div id="jumbotron" class="jumbotron text-center">
+        <h1>Shopping Cart</h1>
+        <p>{{ message }}</p>
+    </div>
+
+    <div class="row main-content">
+        
+        <div class="col-xl-12 items-box cart">
+            <div class="container main-content-wrapper">
+
+                <div class="nail n1"></div>
+                <div class="nail n2"></div>
+
+                <ul class="repeat">
+                    <li ng-repeat="item in cart" ng-if="cartQty[cart.indexOf(item)] > 0">
+                        <cart-items-template class="list-item" item="{{item}}" price="{{cartPrices[cart.indexOf(item)]}}" qty="{{cartQty[cart.indexOf(item)]}}"></cart-items-template>
+                    </li>
+                    <li class="overall-price"><span ng-if="priceOverall != 0 && priceOverall != NaN">Total price:  £{{priceOverall}}</span><span ng-if="priceOverall == 0 || priceOverall == NaN">Your cart is empty.</span></li>
+                    <li class="voucher" ng-if="priceOverall != 0 && priceOverall != NaN">
+                        <div>
+                            <span id="voucherMessage">{{voucherMessage}}</span>
+                            <form id="INPFORM" onsubmit="return false;">
+                                <input id="userInput" type="text" autocomplete="off" placeholder="Voucher ID" />
+                                <input id="submitButton" type="submit" value="Apply" ng-click="submitVoucher.submit()" />
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+
+                <button ng-if="priceOverall != 0 && priceOverall != NaN" class="btn-basic checkout" ng-click="checkoutAndPay()">CHECKOUT & PAY</button>
+        
+                <div class="nail n3"></div>
+                <div class="nail n4"></div>
+        
+            </div>
+        </div>
+
+    </div>
+</div>
+
